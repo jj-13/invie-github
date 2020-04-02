@@ -1,2 +1,2 @@
 # invie-github
-proyecto de platzi
+proyecto de platzi by @jj
