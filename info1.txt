@@ -1,4 +1,8 @@
 
+http://web2pyslices.pythonanywhere.com/slice/show/1634/beauty-graphics-and-charts-with-pygal-updated
+https://pipn.sipingenieria.com/pipn/default/user/login?_next=/pipn/default/index
+**************************************************************
+
 {{extend 'base1.html'}}
 
 <h2 style="text-align: center;">Gestión de ingresos</h2><p>{{=form}}</p>
