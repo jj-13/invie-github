@@ -1,4 +1,10 @@
 
+{{extend 'base1.html'}}
+
+<h2 style="text-align: center;">Gestión de ingresos</h2><p>{{=form}}</p>
+
+
+**************************************************************
 {{extend 'baselog.html'}}
 
 <style>
