@@ -61,3 +61,7 @@ x = [x.ingresov.i_fecha for x in items]
     lispie =[toti.ti, totg.tg]
     #lispie =[100, 10]
     pie = get_plot_pie(lispie)
+    
+*****************************************************************
+
+<img src="data:image/png;base64,{{pie}}">
