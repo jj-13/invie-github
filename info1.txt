@@ -1,0 +1,63 @@
+import matplotlib.pyplot as plt
+import base64
+from io import BytesIO
+
+def get_graph():
+    buffer = BytesIO()
+    plt.savefig(buffer, format='png')
+    buffer.seek(0)
+    img_png = buffer.getvalue()
+    graph = base64.b64encode(img_png)
+    graph = graph.decode('utf-8')
+    buffer.close()
+
+    return graph
+
+def get_plot(x, y,title,ylab):
+    plt.switch_backend('AGG')
+    plt.figure(figsize=(10,5))    
+    plt.title(title)
+    plt.plot(x, y)
+    plt.xticks(rotation=45)
+    plt.xlabel('descripcion')
+    plt.ylabel(ylab)
+    plt.tight_layout()
+    graph = get_graph
+    return graph
+
+def get_plot1(x, y, x1, y1):
+    plt.switch_backend('AGG')
+    plt.figure(figsize=(10,5))    
+    plt.title('Serie de ingresos y gastos')
+    plt.plot(x, y,label='Ingresos', linewidth=2)
+    plt.plot(x1,y1,label='Gastos', linewidth=2)
+    plt.xticks(rotation=45)
+    plt.ylabel('Ingresos / Gastos')
+    plt.xlabel('Fechas')
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig("ingresos/static/ingresos/img/output1.jpg")
+
+def get_plot_pie(x):
+    plt.switch_backend('AGG')
+    plt.figure(figsize=(10,5))    
+    plt.title('Relacion de ingresos y gastos')
+    plt.plot(x)
+    mylabels = ["Ingresos", "Gastos"]
+    plt.pie(x, labels = mylabels, autopct='%1.1f%%')    
+    plt.tight_layout()
+    graph = get_graph
+    return graph
+
+*******************************************************************
+
+x = [x.ingresov.i_fecha for x in items]
+    y = [y.valorIngreso for y in items]
+    
+    x1 = [x1.gastov.g_fecha for x1 in items1]
+    y1 = [y1.valorGasto for y1 in items1]
+    chart = get_plot1(x, y,x1, y1)
+
+    lispie =[toti.ti, totg.tg]
+    #lispie =[100, 10]
+    pie = get_plot_pie(lispie)
